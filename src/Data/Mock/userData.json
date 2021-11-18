@@ -1,0 +1,47 @@
+{
+  "name": "Jakub",
+  "surname": "Stastny",
+  "image": "https://rest.ksi.fi.muni.cz/images/profile/2146",
+  "institutions": [
+    {
+      "name": "Technical University of Munich",
+      "link": "https://tum.de",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Logo_of_the_Technical_University_of_Munich.svg/2000px-Logo_of_the_Technical_University_of_Munich.svg.png",
+      "role": "Student"
+    }
+  ],
+  "verified": true,
+  "email": "xstastnyj@gmail.com",
+  "registeredOffers": [0, 1, 2],
+  "publications": [
+    {
+      "name": "Publication 1",
+      "link": "https://tum.de"
+    },
+    {
+      "name": "Publication 2",
+      "link": "https://tum.de"
+    },
+    {
+      "name": "Publication 3",
+      "link": "https://tum.de"
+    }
+  ],
+  "degrees": [
+    {
+      "institutionName": "Technical University of Munich",
+      "institutionLogo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Logo_of_the_Technical_University_of_Munich.svg/2000px-Logo_of_the_Technical_University_of_Munich.svg.png",
+      "degreeLevel": "Bachelor degree",
+      "degreeShortForm": "BSc",
+      "degreeType": "Computer science"
+    },
+    {
+      "institutionName": "Technical University of Munich",
+      "institutionLogo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Logo_of_the_Technical_University_of_Munich.svg/2000px-Logo_of_the_Technical_University_of_Munich.svg.png",
+      "degreeLevel": "Master degree",
+      "degreeShortForm": "MSc",
+      "degreeType": "Computer Science"
+    }
+  ],
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Malesuada fames ac turpis egestas. Arcu dui vivamus arcu felis bibendum ut tristique. Venenatis a condimentum vitae sapien pellentesque habitant morbi tristique. Porttitor eget dolor morbi non arcu risus quis varius quam. Lacus laoreet non curabitur gravida arcu ac tortor dignissim convallis. Faucibus interdum posuere lorem ipsum dolor sit amet consectetur adipiscing. Nunc consequat interdum varius sit amet mattis vulputate enim nulla. Fames ac turpis egestas integer eget. Libero nunc consequat interdum varius sit amet mattis. A pellentesque sit amet porttitor eget dolor morbi non arcu. Lectus nulla at volutpat diam ut venenatis tellus in metus. Congue quisque egestas diam in arcu cursus.\nDiam maecenas sed enim ut sem viverra aliquet eget. Venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam. In egestas erat imperdiet sed. Nisl pretium fusce id velit ut tortor pretium viverra suspendisse. Rhoncus aenean vel elit scelerisque mauris pellentesque. Lacus sed viverra tellus in hac habitasse platea dictumst vestibulum. Turpis massa tincidunt dui ut ornare lectus. Varius duis at consectetur lorem. Aliquet sagittis id consectetur purus ut faucibus pulvinar elementum integer. Nunc congue nisi vitae suscipit tellus mauris a diam maecenas. Nunc sed id semper risus in hendrerit gravida rutrum. Ultrices neque ornare aenean euismod elementum nisi quis. Euismod nisi porta lorem mollis aliquam ut porttitor. Risus nec feugiat in fermentum. Purus in massa tempor nec feugiat. Duis at tellus at urna condimentum mattis pellentesque id. Sed enim ut sem viverra aliquet eget sit amet. Urna cursus eget nunc scelerisque viverra mauris in.\n"
+}
