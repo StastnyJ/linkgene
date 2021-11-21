@@ -3,6 +3,8 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home/Home";
 import Offers from "./Pages/Offers/Offers";
 import ViewProfile from "./Pages/Profile/ViewProfile";
+import OfferDetails from "./Pages/Offer/OfferDetails";
+import CreateOffer from "./Pages/CreateOffer.tsx/CreateOffer";
 
 export default function App() {
   return (
@@ -10,6 +12,8 @@ export default function App() {
       <Route path="/" element={<Home />} />
       <Route path="/Offers" element={<Offers />} />
       <Route path="/ViewProfile/:userId" element={<ViewProfile />} />
+      <Route path="/OfferDetails/:offerId" element={<OfferDetails />} />
+      <Route path="/CreateOffer" element={<CreateOffer />} />
     </Routes>
   );
 }
