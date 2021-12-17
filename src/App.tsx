@@ -5,6 +5,7 @@ import Offers from "./Pages/Offers/Offers";
 import ViewProfile from "./Pages/Profile/ViewProfile";
 import OfferDetails from "./Pages/Offer/OfferDetails";
 import CreateOffer from "./Pages/CreateOffer.tsx/CreateOffer";
+import SampleTokenGenerator from "./Pages/SampleTokenGenerator/SampleTokenGenerator";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
       <Route path="/ViewProfile/:userId" element={<ViewProfile />} />
       <Route path="/OfferDetails/:offerId" element={<OfferDetails />} />
       <Route path="/CreateOffer" element={<CreateOffer />} />
+      <Route path="/SampleTokenGenerator" element={<SampleTokenGenerator />} />
     </Routes>
   );
 }
