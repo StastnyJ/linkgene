@@ -1,10 +1,9 @@
+import React from "react";
 import styled from "@emotion/styled";
 import { AppBar, Hidden, Typography, useTheme, Theme } from "@mui/material";
 // import { Menu as MenuIcon } from "@mui/icons-material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
-
-import React from "react";
+import { faWallet } from "@fortawesome/free-solid-svg-icons";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const LinkGeneBar = styled(AppBar)({
@@ -54,29 +53,18 @@ const LoginButton = styled.div({
   textAlign: "center",
 });
 
-const CustomAvatar = styled.img({
-  height: 32,
-  width: 32,
-  borderRadius: "50%",
-});
-
-const MenuRapierer = styled.div({
+const MenuRepairer = styled.div({
   width: "100%",
   height: 42,
 });
 
 interface IProps {
-  loginWithRedirect: () => void;
-  logout: (info: { returnTo: string }) => void;
-  user?: {
-    picture?: string;
-    name?: string;
-    email?: string;
-  };
-  isAuthenticated: boolean;
+  authenticationStatus: "initializing" | "unavailable" | "notConnected" | "connected" | "connecting";
+  connectWallet: () => Promise<string[] | null>;
+  user: string | null;
 }
 
-export default function Header({ isAuthenticated, loginWithRedirect, user }: IProps) {
+export default function Header({ authenticationStatus, connectWallet }: IProps) {
   const nav = useNavigate();
   const location = useLocation();
   const theme = useTheme();
@@ -97,55 +85,59 @@ export default function Header({ isAuthenticated, loginWithRedirect, user }: IPr
         </Hidden> */}
         <Hidden xsDown>
           <>
-            {isAuthenticated ? (
-              <LoginButton style={{ top: 8 }} onClick={() => nav("/Profile")}>
-                <CustomAvatar alt={user?.name || user?.email} src={user?.picture} />
-                <br />
-                <Typography variant="button">{user?.name || user?.email}</Typography>
-              </LoginButton>
-            ) : (
-              <LoginButton onClick={loginWithRedirect}>
-                <span>
-                  <FontAwesomeIcon color="white" icon={faUser} />
-                  <br />
-                  <Typography variant="button">Sign in</Typography>
-                </span>
-              </LoginButton>
-            )}
+            <LoginButton
+              style={{ top: 8 }}
+              onClick={() =>
+                authenticationStatus === "notConnected"
+                  ? connectWallet().then((res) => res !== null && nav("/Wallet"))
+                  : nav("/Wallet")
+              }
+            >
+              <FontAwesomeIcon color="white" icon={faWallet} />
+              <br />
+              <Typography variant="button">{authenticationStatus}</Typography>
+            </LoginButton>
           </>
         </Hidden>
       </LinkGeneBar>
       <MenuBar theme={theme} className={`navbarTop`}>
         <MenuItem
           variant="h6"
-          onClick={() => nav("/Offers")}
-          style={{ color: location.pathname === "/Offers" ? "#1368bd" : "inherit" }}
+          onClick={() => nav("/About")}
+          style={{ color: location.pathname === "/About" ? "#1368bd" : "inherit" }}
         >
-          Offers
+          About
         </MenuItem>
         <MenuItem
           variant="h6"
-          onClick={() => nav("/CreateOffer")}
-          style={{ color: location.pathname === "/CreateOffer" ? "#1368bd" : "inherit" }}
+          onClick={() => nav("/Community")}
+          style={{ color: location.pathname === "/Community" ? "#1368bd" : "inherit" }}
         >
-          Create offer
+          Community
         </MenuItem>
         <MenuItem
           variant="h6"
-          onClick={() => nav("/ViewProfile/0")}
-          style={{ color: location.pathname.startsWith("/ViewProfile") ? "#1368bd" : "inherit" }}
+          onClick={() => nav("/GetTokens")}
+          style={{ color: location.pathname.startsWith("/GetTokens") ? "#1368bd" : "inherit" }}
         >
-          Profile
+          Get $LG
         </MenuItem>
         <MenuItem
           variant="h6"
-          onClick={() => nav("/SampleTokenGenerator")}
-          style={{ color: location.pathname.startsWith("/SampleTokenGenerator") ? "#1368bd" : "inherit" }}
+          onClick={() => nav("/Proposals")}
+          style={{ color: location.pathname.startsWith("/Proposals") ? "#1368bd" : "inherit" }}
         >
-          Sample Token Generator
+          Proposals
+        </MenuItem>
+        <MenuItem
+          variant="h6"
+          onClick={() => nav("/Researchers")}
+          style={{ color: location.pathname.startsWith("/Researchers") ? "#1368bd" : "inherit" }}
+        >
+          Researcher Zone
         </MenuItem>
       </MenuBar>
-      <MenuRapierer />
+      <MenuRepairer />
     </>
   );
 }
