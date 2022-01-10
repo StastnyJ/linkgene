@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Container, Typography, useTheme } from "@mui/material";
+import { Accordion, AccordionSummary, Button, Container, Typography, useTheme, AccordionDetails } from "@mui/material";
 import styled from "@emotion/styled";
 import HomePageIcon from "./Components/HomePageIcon";
 import { faCoins, faUsers, faMicroscope, faDollarSign, faHandHoldingUsd } from "@fortawesome/free-solid-svg-icons";
@@ -10,6 +10,8 @@ import RouterCard from "./Components/RouterCard";
 import DataCard from "../../Components/DataCard";
 import investorsData from "../../Data/InvestorsData.json";
 import researchersData from "../../Data/ResearchersData.json";
+import faq from "../../Data/FAQ.json";
+import { ExpandMore } from "@mui/icons-material";
 
 const Logo = styled.img({
   width: "80%",
@@ -136,6 +138,32 @@ export default function Home() {
           key={i}
         />
       ))}
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <Typography variant="h1" color={theme.palette.primary.main} align="center">
+        FAQ
+      </Typography>
+      <br />
+      <br />
+      <Container maxWidth="xl">
+        {faq.map((q) => (
+          <Accordion key={q.question}>
+            <AccordionSummary expandIcon={<ExpandMore />}>
+              <Typography>{q.question} </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>{q.answer}</Typography>
+            </AccordionDetails>
+          </Accordion>
+        ))}
+      </Container>
+      <br />
+      <br />
+      <br />
+      <br />
     </>
   );
 }
