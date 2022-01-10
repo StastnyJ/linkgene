@@ -5,8 +5,8 @@ import Offers from "./Pages/Offers/Offers";
 import ViewProfile from "./Pages/Profile/ViewProfile";
 import OfferDetails from "./Pages/Offer/OfferDetails";
 import CreateOffer from "./Pages/CreateOffer.tsx/CreateOffer";
-import SampleTokenGenerator from "./Pages/SampleTokenGenerator/SampleTokenGenerator";
 import Wallet from "./Pages/Wallet/Wallet";
+import Community from "./Pages/Community/Community";
 
 export default function App() {
   return (
@@ -16,8 +16,8 @@ export default function App() {
       <Route path="/ViewProfile/:userId" element={<ViewProfile />} />
       <Route path="/OfferDetails/:offerId" element={<OfferDetails />} />
       <Route path="/CreateOffer" element={<CreateOffer />} />
-      <Route path="/SampleTokenGenerator" element={<SampleTokenGenerator />} />
       <Route path="/Wallet" element={<Wallet />} />
+      <Route path="/Community" element={<Community />} />
     </Routes>
   );
 }

@@ -23,7 +23,7 @@ export default function Layout(props: { children?: React.ReactNode }) {
         <MobileNavbar open={navbarOpen} setOpen={setNavbarOpen} />
       </Hidden>
       <br />
-      {props.children}
+      <div style={{ minHeight: "calc(100vh - 250px)" }}>{props.children}</div>
       <Footer />
     </div>
   );
