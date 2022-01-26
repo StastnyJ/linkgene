@@ -1,5 +1,5 @@
 import React from "react";
-import { Avatar, Button, Grid, Stack, TextField, Typography } from "@mui/material";
+import { Button, Grid, TextField, Typography } from "@mui/material";
 import { Editor } from "@tinymce/tinymce-react";
 import styled from "@emotion/styled";
 
@@ -20,7 +20,6 @@ export default function () {
         <Grid item md={4}>
           <TextField variant="standard" label="Project title" fullWidth />
           <TextField variant="standard" label="Project subtitle" fullWidth />
-          <TextField variant="standard" label="Categories (TODO better input control)" fullWidth />
         </Grid>
         <Grid item md={8}>
           <ImagePanel style={{ backgroundImage: "url(/img/researchDefault.jpg)" }} />
@@ -30,19 +29,7 @@ export default function () {
         </Grid>
       </Grid>
       <Grid container spacing={3}>
-        <Grid item md={4}>
-          <Typography variant="h6">Authors</Typography>
-          <br />
-          <Stack direction="row" alignItems="center">
-            <Avatar sx={{ width: 56, height: 56 }} src="https://rest.ksi.fi.muni.cz/images/profile/2146" />
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <Typography variant="h6">Jakub Stastny</Typography>
-          </Stack>
-          <div style={{ width: "100%", textAlign: "right" }}>
-            <Button color="primary">Add author</Button>
-          </div>
-        </Grid>
-        <Grid item md={8}>
+        <Grid item md={12}>
           <TextField label="Basic project description" fullWidth multiline rows={10} />
         </Grid>
         <Grid item xs={12}>
@@ -70,9 +57,9 @@ export default function () {
           />
         </Grid>
         <Grid item xs={12}>
-          <Typography variant="h6">Related publications</Typography>
+          <Typography variant="h6">Attachments</Typography>
           <br />
-          <Button color="primary">Add publication</Button>
+          <Button color="primary">Add attachment</Button>
         </Grid>
       </Grid>
     </>

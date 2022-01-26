@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
-import { Verified } from "@mui/icons-material";
+import { Mail, Verified } from "@mui/icons-material";
 import { Avatar, Button, Chip, Grid, Stack, Typography } from "@mui/material";
 import { Offer } from "../Types/Offers";
-import CategoryIcon from "./CategoryIcon";
+import { useMetaMask } from "metamask-react";
 import { useNavigate } from "react-router-dom";
 
 interface IProps {
@@ -64,7 +64,8 @@ const Link = styled(Typography)({
 
 export default function OfferDetailsCard({ offer }: IProps) {
   const [descriptionExpanded, setDescriptionExpanded] = useState(false);
-  const navigate = useNavigate();
+  const { status } = useMetaMask();
+  const nav = useNavigate();
 
   return (
     <Root>
@@ -79,67 +80,45 @@ export default function OfferDetailsCard({ offer }: IProps) {
         </TitleLine>
       </ImagePanel>
       <div style={{ padding: 12 }}>
-        <Grid spacing={3} alignItems="center" container>
-          <Grid item md={6}>
-            {offer.categories.map((c) => (
-              <Stack direction="row" alignItems="center" style={{ marginBottom: 8 }}>
-                <CategoryIcon category={c} />
-                &nbsp;&nbsp;&nbsp;&nbsp;<Typography>{c}</Typography>
-              </Stack>
-            ))}
-          </Grid>
-          <Grid item md={6} style={{ textAlign: "right" }}>
-            <Typography variant="h4">{offer.tokenPrice} €/token</Typography>
-            <Button color="primary" variant="contained" style={{ margin: "8px 0 16px 0" }}>
-              Buy now
-            </Button>
-            <Typography color="GrayText">
-              {offer.tokensAvailable} from total {offer.tokensTotal} still available
-            </Typography>
-            <Button color="primary" style={{ margin: "8px 0 16px 0" }}>
-              Show tokens details
-            </Button>
-          </Grid>
-        </Grid>
-        <br />
-        <Typography variant="h4">Authors</Typography>
+        <Button
+          style={{ marginTop: 16, marginBottom: 32 }}
+          onClick={() => (status === "connected" ? null : nav("/Wallet"))}
+          variant="contained"
+          fullWidth
+        >
+          {status === "connected" ? "Participate in this project" : "Login with metamask to participate"}
+        </Button>
+        <Typography variant="h4">This project was requestd by</Typography>
         <br />
         <Grid container spacing={3}>
-          {offer.authors.map((a, i) => (
-            <React.Fragment key={i}>
-              <Grid item md={6}>
+          <Grid item md={6}>
+            <Stack direction="row" alignItems="center">
+              <Avatar sx={{ width: 56, height: 56 }} src={offer.requestor.institutionImage} />
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <span>
+                <Typography variant="h6">{offer.requestor.institutionName}</Typography>
+                <Link variant="caption" onClick={() => window.open(offer.requestor.institutionWeb, "_blank")}>
+                  Visit website
+                </Link>
+              </span>
+            </Stack>
+          </Grid>
+          <Grid item md={6}>
+            {offer.requestor.contactPeople.map((contact, i) => (
+              <React.Fragment key={i}>
                 <Stack direction="row" alignItems="center">
-                  <Avatar sx={{ width: 56, height: 56 }} src={a.image} />
+                  <Mail />
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   <span>
-                    <Typography variant="h6">
-                      {a.name} {a.surname}
-                    </Typography>
-                    <Link variant="caption" onClick={() => navigate("/ViewProfile/0")}>
-                      View profile
+                    <Typography variant="h6">{contact.name}</Typography>
+                    <Link variant="caption" onClick={() => window.open("mailto:" + contact.contact, "_blank")}>
+                      {contact.contact}
                     </Link>
                   </span>
                 </Stack>
-              </Grid>
-              <Grid item md={6}>
-                <Stack direction="row" alignItems="center">
-                  <Avatar
-                    sx={{ width: 56, height: 56 }}
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Logo_of_the_Technical_University_of_Munich.svg/2000px-Logo_of_the_Technical_University_of_Munich.svg.png"
-                  />
-                  &nbsp;&nbsp;&nbsp;&nbsp;
-                  <span>
-                    <Typography>
-                      <b>{a.institution}</b>
-                    </Typography>
-                    <Link variant="caption" onClick={() => window.open("https://www.tum.de", "_blank")?.focus()}>
-                      Institution details
-                    </Link>
-                  </span>
-                </Stack>
-              </Grid>
-            </React.Fragment>
-          ))}
+              </React.Fragment>
+            ))}
+          </Grid>
         </Grid>
         <br />
         <br />

@@ -8,44 +8,43 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 const LinkGeneBar = styled(AppBar)({
   height: 68,
-  paddingLeft: 22,
+  paddingLeft: 76,
   paddingTop: 14,
 });
 
-// const Logo = styled.img({
-//   width: "72px",
-//   height: "72px",
-//   top: "8px",
-//   left: "22px",
-//   position: "absolute",
-// });
+const Logo = styled.img({
+  width: 48,
+  height: 48,
+  top: 8,
+  left: 22,
+  position: "absolute",
+});
 
 const MenuBar = styled.div(({ theme }: { theme: Theme }) => ({
-  height: "42px",
+  height: 42,
   width: "100%",
   zIndex: 999,
-  // backgroundColor: theme.palette.secondary.main,
-  // color: theme.palette.secondary.contrastText,
-  backgroundColor: "#e9e9e9",
-  color: "#5d92c7",
+  backgroundColor: theme.palette.secondary.main,
+  color: theme.palette.secondary.contrastText,
   position: "absolute",
 }));
 
-const MenuItem = styled(Typography)({
+const MenuItem = styled(Typography)(({ selected }: { selected: boolean }) => ({
   fontSize: "1.1rem",
-  marginLeft: "16px",
-  marginTop: "6px",
+  marginLeft: 16,
+  marginTop: 6,
   float: "left",
   cursor: "pointer",
-  height: "32px",
+  height: 32,
+  color: selected ? "#282828" : "inherit",
   "&:hover": {
-    color: "#1368bd",
+    color: "#282828",
   },
-});
+}));
 
 const LoginButton = styled.div({
-  top: "14px",
-  right: "22px",
+  top: 14,
+  right: 22,
   height: 60,
   position: "absolute",
   cursor: "pointer",
@@ -73,9 +72,9 @@ export default function Header({ authenticationStatus, connectWallet }: IProps) 
     <>
       <LinkGeneBar position="relative">
         <span onClick={() => nav("/")} style={{ cursor: "pointer" }}>
-          {/* <img className={classes.logo} src={"/img/logo.svg"} alt="Logo" /> */}
+          <Logo src="/img/LogoSmall.svg" alt="Logo" />
           <Typography variant="h4" style={{ flexGrow: 1, fontFamily: "Lato, Roboto, Helvetica, Arial, sans-serif" }}>
-            LinkGene
+            QuantaDao
           </Typography>
         </span>
         {/* <Hidden smUp>
@@ -101,40 +100,20 @@ export default function Header({ authenticationStatus, connectWallet }: IProps) 
         </Hidden>
       </LinkGeneBar>
       <MenuBar theme={theme} className={`navbarTop`}>
-        <MenuItem
-          variant="h6"
-          onClick={() => nav("/About")}
-          style={{ color: location.pathname === "/About" ? "#1368bd" : "inherit" }}
-        >
+        <MenuItem variant="h6" onClick={() => nav("/About")} selected={location.pathname === "/About"}>
           About
         </MenuItem>
-        <MenuItem
-          variant="h6"
-          onClick={() => nav("/Community")}
-          style={{ color: location.pathname === "/Community" ? "#1368bd" : "inherit" }}
-        >
+        <MenuItem variant="h6" onClick={() => nav("/Community")} selected={location.pathname === "/Community"}>
           Community
         </MenuItem>
-        <MenuItem
-          variant="h6"
-          onClick={() => nav("/GetTokens")}
-          style={{ color: location.pathname.startsWith("/GetTokens") ? "#1368bd" : "inherit" }}
-        >
+        <MenuItem variant="h6" onClick={() => nav("/GetTokens")} selected={location.pathname === "/GetTokens"}>
           Get $LG
         </MenuItem>
-        <MenuItem
-          variant="h6"
-          onClick={() => nav("/Proposals")}
-          style={{ color: location.pathname.startsWith("/Proposals") ? "#1368bd" : "inherit" }}
-        >
-          Proposals
+        <MenuItem variant="h6" onClick={() => nav("/Projects")} selected={location.pathname === "/Projects"}>
+          Projects
         </MenuItem>
-        <MenuItem
-          variant="h6"
-          onClick={() => nav("/Researchers")}
-          style={{ color: location.pathname.startsWith("/Researchers") ? "#1368bd" : "inherit" }}
-        >
-          Researcher Zone
+        <MenuItem variant="h6" onClick={() => nav("/NewProject")} selected={location.pathname === "/NewProject"}>
+          Request Project
         </MenuItem>
       </MenuBar>
       <MenuRepairer />

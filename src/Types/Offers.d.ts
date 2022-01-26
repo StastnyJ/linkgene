@@ -5,11 +5,15 @@ export interface Offer {
   subtitle: string;
   description: string;
   image: string;
-  categories: string[];
-  authors: Profile[];
+  requestor: {
+    institutionName: string,
+    institutionWeb: string,
+    institutionImage: string,
+    contactPeople: {
+      name: string;
+      contactType: string;
+      contact: string
+    }[]
+  };
   verified: boolean;
-  tokenPrice: number;
-  tokensAvailable: number;
-  tokensTotal: number;
-  earlyInvestment: boolean;
 }

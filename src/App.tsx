@@ -12,10 +12,10 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/Proposals" element={<Offers />} />
+      <Route path="/Projects" element={<Offers />} />
       <Route path="/ViewProfile/:userId" element={<ViewProfile />} />
       <Route path="/OfferDetails/:offerId" element={<OfferDetails />} />
-      <Route path="/CreateOffer" element={<CreateOffer />} />
+      <Route path="/NewProject" element={<CreateOffer />} />
       <Route path="/Wallet" element={<Wallet />} />
       <Route path="/Community" element={<Community />} />
     </Routes>

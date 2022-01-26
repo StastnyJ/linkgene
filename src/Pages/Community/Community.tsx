@@ -16,10 +16,9 @@ export default function Community() {
       <br />
       <br />
       <Typography align="justify">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        We are building a community of researches, experts and enthusiasts in the field of Quantum Computing. For the
+        communication, we are using well discord, so you do not need to create and manage many different acount and you can
+        simply join us with your discord account.
       </Typography>
       <br />
       <br />
@@ -32,35 +31,35 @@ export default function Community() {
             <Stack direction="row">
               <CheckCircle color="primary" />
               &nbsp;&nbsp;&nbsp;&nbsp;
-              <Typography color={theme.palette.primary.main}>Get all news in the first row</Typography>
+              <Typography color={theme.palette.primary.main}>Get contact to other experts</Typography>
             </Stack>
           </Grid>
           <Grid item xs={12} md={6}>
             <Stack direction="row">
               <CheckCircle color="primary" />
               &nbsp;&nbsp;&nbsp;&nbsp;
-              <Typography color={theme.palette.primary.main}>Get all news in the first row</Typography>
+              <Typography color={theme.palette.primary.main}>Be first to see new project proposals</Typography>
             </Stack>
           </Grid>
           <Grid item xs={12} md={6}>
             <Stack direction="row">
               <CheckCircle color="primary" />
               &nbsp;&nbsp;&nbsp;&nbsp;
-              <Typography color={theme.palette.primary.main}>Get all news in the first row</Typography>
+              <Typography color={theme.palette.primary.main}>Watch news in Quantum research</Typography>
             </Stack>
           </Grid>
           <Grid item xs={12} md={6}>
             <Stack direction="row">
               <CheckCircle color="primary" />
               &nbsp;&nbsp;&nbsp;&nbsp;
-              <Typography color={theme.palette.primary.main}>Get all news in the first row</Typography>
+              <Typography color={theme.palette.primary.main}>Stay updated in our platfrom</Typography>
             </Stack>
           </Grid>
           <Grid item xs={12} md={6}>
             <Stack direction="row">
               <CheckCircle color="primary" />
               &nbsp;&nbsp;&nbsp;&nbsp;
-              <Typography color={theme.palette.primary.main}>Get all news in the first row</Typography>
+              <Typography color={theme.palette.primary.main}>Have fun with quantum</Typography>
             </Stack>
           </Grid>
         </Grid>

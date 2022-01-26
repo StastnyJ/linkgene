@@ -61,7 +61,7 @@ export default function Footer() {
             <Grid container alignItems="center">
               <Grid item xs={12} sm={4}>
                 <div style={{ textAlign: isXs ? "center" : "left" }}>
-                  <Logo src="/img/logoLarge.png" alt="logo" />
+                  <Logo src="/img/LogoLarge.svg" alt="logo" />
                 </div>
               </Grid>
               <Grid item xs={12} sm={4}>

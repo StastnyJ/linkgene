@@ -1,0 +1,40 @@
+[
+  {
+    "title": "Join community",
+    "text": "We are building a community of researches, experts and enthusiasts in the field of Quantum Computing. Join our awesome community, get contact to other experts in a field, be first to see new project proposals, watch news in Quantum research and stay updated in our platfrom. For the communication, we are using well discord, so you do not need to create and manage many different acount and you can simply join us with your discord account.",
+    "image": "/img/investors/community.png",
+    "link": "/Community",
+    "linkText": "Join Community"
+  },
+  {
+    "title": "Connect your wallet",
+    "text": "On our platform, you can directly connect your crypto wallet with metamask. After connecting, you can directly buy our tokens, see state of your community value and initialize yourself via web3 technologies directly on the website.",
+    "image": "/img/investors/Metamask.png",
+    "link": "/Wallet",
+    "linkText": "Connect Wallet"
+  },
+  {
+    "title": "Buy tokens",
+    "text": "By providing value to the community, either as funds or work, the members are rewarded tokens. Those tokens provide governance rights over the community holding. Also, a fragment of the revenue is distributed over the token holders proportionally to the number of tokens they hold.",
+    "image": "/img/investors/crypto.png",
+    "link": "/GetTokens/",
+    "linkText": "Get $QC"
+  },
+  {
+    "title": "Earn reputation",
+    "text": "Be active in the community, solve quantum challanges and help with the further platform development. As a reward, your community reputitaion will grow, which will increase your value in the community that guarantees you higher voting rights and other awesome advantages.",
+    "image": "/img/investors/reputation.png"
+  },
+  {
+    "title": "Decide future steps",
+    "text": "Every important decision of the further development of the platform won't be decided by quanta founders or management, but by the community. Every active community member has rights to participate in every descission on the platform. Increasing reputation and buying tokens will increase the power of your vote, but we will ensure, that voting can't be monopolized just by buying large amounts of tokens and that everyone's vote will matter.",
+    "image": "/img/investors/vote.png",
+    "link": "/Proposals",
+    "linkText": "Current proposals"
+  },
+  {
+    "title": "Profit",
+    "text": "Unlike community building platforms from the past 10 years, we are leveraging the emerging web3 technologies that reward active participation. By solving the industry R&D problems, by promoting the platform and ongoing research, the members receive signalling rewards, incentivising them to participate.",
+    "image": "/img/investors/profit.png"
+  }
+]

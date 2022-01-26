@@ -1,5 +1,5 @@
 import React, { useState, createContext, useContext } from "react";
-import { LinearProgress, Snackbar, Alert } from "@mui/material";
+import { LinearProgress, Snackbar, Alert, ThemeProvider, createTheme } from "@mui/material";
 import Layout from "./Layout";
 
 export const LayoutContext = createContext({
@@ -65,34 +65,43 @@ export function LayoutProvider(props: { children?: React.ReactNode }) {
         isLoading: loading,
       }}
     >
-      <Layout>
-        {props.children}
-        <Snackbar
-          open={Boolean(alertMessage)}
-          onClose={() => setAlertMessage("")}
-          autoHideDuration={6000}
-          anchorOrigin={{ vertical: "top", horizontal: "center" }}
-        >
-          <Alert onClose={() => setAlertMessage("")} severity={alertSeverity}>
-            {alertMessage}
-          </Alert>
-        </Snackbar>
-        <Snackbar
-          open={Boolean(customAlertProps.message)}
-          onClose={() => setCustomAlertProps({ ...customAlertProps, message: "" })}
-          autoHideDuration={6000}
-          anchorOrigin={{ vertical: "top", horizontal: "center" }}
-        >
-          <Alert
-            style={{ color: customAlertProps.color, backgroundColor: customAlertProps.bg }}
-            onClose={() => setCustomAlertProps({ ...customAlertProps, message: "" })}
-            icon={false}
+      <ThemeProvider
+        theme={createTheme({
+          palette: {
+            primary: { main: "#363636", contrastText: "#ffffff" },
+            secondary: { main: "#b3b3b3", contrastText: "#888888", light: "rgba(255, 0, 102, 0.4)" },
+          },
+        })}
+      >
+        <Layout>
+          {props.children}
+          <Snackbar
+            open={Boolean(alertMessage)}
+            onClose={() => setAlertMessage("")}
+            autoHideDuration={6000}
+            anchorOrigin={{ vertical: "top", horizontal: "center" }}
           >
-            {customAlertProps.message}
-          </Alert>
-        </Snackbar>
-        {loading && <LinearProgress style={{ position: "fixed", bottom: "0", height: "4px", width: "100%" }} />}
-      </Layout>
+            <Alert onClose={() => setAlertMessage("")} severity={alertSeverity}>
+              {alertMessage}
+            </Alert>
+          </Snackbar>
+          <Snackbar
+            open={Boolean(customAlertProps.message)}
+            onClose={() => setCustomAlertProps({ ...customAlertProps, message: "" })}
+            autoHideDuration={6000}
+            anchorOrigin={{ vertical: "top", horizontal: "center" }}
+          >
+            <Alert
+              style={{ color: customAlertProps.color, backgroundColor: customAlertProps.bg }}
+              onClose={() => setCustomAlertProps({ ...customAlertProps, message: "" })}
+              icon={false}
+            >
+              {customAlertProps.message}
+            </Alert>
+          </Snackbar>
+          {loading && <LinearProgress style={{ position: "fixed", bottom: "0", height: "4px", width: "100%" }} />}
+        </Layout>
+      </ThemeProvider>
     </LayoutContext.Provider>
   );
 }
