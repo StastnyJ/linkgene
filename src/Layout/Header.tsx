@@ -74,7 +74,7 @@ export default function Header({ authenticationStatus, connectWallet }: IProps) 
         <span onClick={() => nav("/")} style={{ cursor: "pointer" }}>
           <Logo src="/img/LogoSmall.svg" alt="Logo" />
           <Typography variant="h4" style={{ flexGrow: 1, fontFamily: "Lato, Roboto, Helvetica, Arial, sans-serif" }}>
-            QuantaDao
+            QuantaDAO
           </Typography>
         </span>
         {/* <Hidden smUp>
