@@ -88,6 +88,19 @@ export default function OfferDetailsCard({ offer }: IProps) {
         >
           {status === "connected" ? "Participate in this project" : "Login with metamask to participate"}
         </Button>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <div>
+            <Typography variant="caption">Desired dealdine: {new Date(offer.desiredDeadline).toDateString()}</Typography>
+            <br />
+            <Typography variant="caption">
+              Currently {offer.scientisWorkingCount} experts are working on this projects
+            </Typography>
+          </div>
+          <div style={{ flexGrow: 1 }}></div>
+          <div>
+            <Typography>Project value: {offer.projectValue} €</Typography>
+          </div>
+        </div>
         <Typography variant="h4">This project was requestd by</Typography>
         <br />
         <Grid container spacing={3}>

@@ -2,6 +2,9 @@ import React from "react";
 import { Button, Grid, TextField, Typography } from "@mui/material";
 import { Editor } from "@tinymce/tinymce-react";
 import styled from "@emotion/styled";
+import AdapterDateFns from "@mui/lab/AdapterDateFns";
+import LocalizationProvider from "@mui/lab/LocalizationProvider";
+import { DatePicker } from "@mui/lab";
 
 const ImagePanel = styled.div({
   width: "100%",
@@ -29,6 +32,19 @@ export default function () {
         </Grid>
       </Grid>
       <Grid container spacing={3}>
+        <Grid item md={6}>
+          <TextField type="number" label="Project value" fullWidth variant="standard" />
+        </Grid>
+        <Grid item md={6}>
+          <LocalizationProvider dateAdapter={AdapterDateFns}>
+            <DatePicker
+              label="Desired deadline"
+              value={new Date()}
+              onChange={() => {}}
+              renderInput={(params) => <TextField {...params} fullWidth variant="standard" />}
+            />
+          </LocalizationProvider>
+        </Grid>
         <Grid item md={12}>
           <TextField label="Basic project description" fullWidth multiline rows={10} />
         </Grid>

@@ -15,5 +15,8 @@ export interface Offer {
       contact: string
     }[]
   };
+  projectValue: number;
+  desiredDeadline: string;
+  scientisWorkingCount: number;
   verified: boolean;
 }

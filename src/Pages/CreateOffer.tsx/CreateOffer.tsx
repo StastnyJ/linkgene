@@ -18,7 +18,7 @@ export default function CreateOffer() {
           <StepButton color="inherit">Contact information</StepButton>
         </Step>
         <Step>
-          <StepButton color="inherit">Finnish</StepButton>
+          <StepButton color="inherit">Finish</StepButton>
         </Step>
       </Stepper>
       <br />
@@ -34,7 +34,7 @@ export default function CreateOffer() {
           <StepButton color="inherit">Contact information</StepButton>
         </Step>
         <Step>
-          <StepButton color="inherit">Finnish</StepButton>
+          <StepButton color="inherit">Finish</StepButton>
         </Step>
       </Stepper>
       <br />
@@ -51,8 +51,8 @@ export default function CreateOffer() {
           </Button>
         )}
         {step === 2 && (
-          <Button color="primary" variant="contained" onClick={() => console.log("Finnish")}>
-            Finnish request
+          <Button color="primary" variant="contained" onClick={() => console.log("Finish")}>
+            Finish request
           </Button>
         )}
       </div>

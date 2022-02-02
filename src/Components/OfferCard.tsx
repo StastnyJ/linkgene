@@ -39,6 +39,13 @@ export default function ({ offer, onClick, hideAuthor }: IProps) {
       </Stack>
       <Typography color="GrayText">{offer.subtitle}</Typography>
       <br />
+      <Stack direction="row">
+        <Typography variant="caption" color="lightgrey">
+          {new Date(offer.desiredDeadline).toDateString()}
+        </Typography>
+        <div style={{ flexGrow: 1 }}></div>
+        <Typography>{offer.projectValue} €</Typography>
+      </Stack>
     </Root>
   );
 }

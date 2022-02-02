@@ -1,9 +1,14 @@
 import React from "react";
-import { Button, FormControl, Grid, InputLabel, MenuItem, Select, TextField, Typography } from "@mui/material";
+import { Button, Checkbox, FormControl, Grid, InputLabel, MenuItem, Select, TextField, Typography } from "@mui/material";
 
 export default function () {
   return (
     <Grid container spacing={3}>
+      <Grid item xs={12}>
+        <div style={{ display: "flex", cursor: "pointer", alignItems: "center" }}>
+          <Checkbox color="primary" defaultChecked={false} /> <Typography>Request project anonymously</Typography>
+        </div>
+      </Grid>
       <Grid item xs={12} md={4}>
         <TextField label="Company name/Requestor name" fullWidth variant="standard" />
       </Grid>
