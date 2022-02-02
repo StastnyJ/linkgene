@@ -23,7 +23,7 @@ export default function DiscordButton() {
   });
 
   return (
-    <Root onClick={() => window.open("https://discord.gg/qT3FuCha", "_blank")}>
+    <Root onClick={() => window.open("https://discord.gg/DrbnjkKwKV", "_blank")}>
       <FontAwesomeIcon icon={faDiscord} />
       Join the community
     </Root>

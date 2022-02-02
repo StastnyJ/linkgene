@@ -36,7 +36,7 @@ export default function LargeDiscordButton() {
   });
 
   return (
-    <Root onClick={() => window.open("https://discord.gg/qT3FuCha", "_blank")}>
+    <Root onClick={() => window.open("https://discord.gg/DrbnjkKwKV", "_blank")}>
       <div style={{ position: "absolute", top: 42, left: 14 }} className="fa-layers fa-fw">
         <FontAwesomeIcon size="5x" icon={faCircle} />
         <FontAwesomeIcon size="4x" color={theme.palette.primary.main} transform="shrink-6" icon={faDiscord} />
